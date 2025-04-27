@@ -5,6 +5,7 @@ defmodule RicardoBot do
   alias RicardoBot.Command.Cachorro
   alias RicardoBot.Command.Newton
   alias RicardoBot.Command.Par
+  alias RicardoBot.Command.Xadrez
 
   def handle_event({:MESSAGE_CREATE, msg, _ws_status}) do
     cond do
@@ -19,6 +20,9 @@ defmodule RicardoBot do
 
       String.starts_with?(msg.content, "!par") ->
         Message.create(msg.channel_id, Par.handle_par(msg.content))
+
+      String.starts_with?(msg.content, "!xadrez") ->
+        Message.create(msg.channel_id, Xadrez.handle_xadrez(msg.content))
 
       true ->
         :ignore
