@@ -7,6 +7,7 @@ defmodule RicardoBot do
   alias RicardoBot.Command.Par
   alias RicardoBot.Command.Xadrez
   alias RicardoBot.Command.QR
+  alias RicardoBot.Command.Clima
 
   def handle_event({:MESSAGE_CREATE, msg, _ws_status}) do
     cond do
@@ -27,6 +28,9 @@ defmodule RicardoBot do
 
       String.starts_with?(msg.content, "!qr") ->
         Message.create(msg.channel_id, QR.handle_qr(msg.content))
+
+      String.starts_with?(msg.content, "!clima") ->
+        Message.create(msg.channel_id, Clima.handle_clima(msg.content))
 
       true ->
         :ignore
