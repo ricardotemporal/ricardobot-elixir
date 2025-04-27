@@ -3,6 +3,7 @@ defmodule RicardoBot do
   alias Nostrum.Api.Message
   alias RicardoBot.Command.Gato
   alias RicardoBot.Command.Cachorro
+  alias RicardoBot.Command.Newton
 
   def handle_event({:MESSAGE_CREATE, msg, _ws_status}) do
     cond do
@@ -11,6 +12,9 @@ defmodule RicardoBot do
 
       String.starts_with?(msg.content, "!cachorro") ->
         Message.create(msg.channel_id, Cachorro.handle_cachorro(msg.content))
+
+      String.starts_with?(msg.content, "!resolva") ->
+        Message.create(msg.channel_id, Newton.handle_simplify(msg.content))
 
       true ->
         :ignore
