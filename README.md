@@ -1,62 +1,21 @@
-# RicardoBot - A Multifunctional Discord Bot in Elixir
+# RicardoBot 
 
 ![Elixir](https://img.shields.io/badge/Elixir-4B275F?style=for-the-badge&logo=elixir&logoColor=white)
 ![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-RicardoBot is a feature-rich Discord bot built with Elixir that integrates with 7 different APIs to provide various utilities right in your Discord server.
+RicardoBot is a Discord bot built with Elixir that integrates with 7 different APIs to provide various utilities right in your Discord server.
 
-## ✨ Features
+## Features
 
 - 🐱 Random cat facts
-- 🐶 HTTP status code dogs (http.dog)
+- 🐶 HTTP status code dogs 
 - ♟️ Chess.com player profiles
 - 🌦️ Weather information
 - 🔢 Number parity checker
 - 🔗 QR code generator
 - ➗ Math expression solver
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Docker and Docker Compose
-- Discord developer account
-- Discord server where you have admin permissions
-
-### Installation
-
-1. **Set up your Discord bot:**
-   - Create a new application at [Discord Developer Portal](https://discord.com/developers/applications)
-   - Navigate to the "Bot" tab and:
-     - Click "Add Bot"
-     - Enable "Administrator" permissions
-     - Turn on all "Gateway Intents"
-     - Copy your bot token
-
-2. **Create config file**
-    - Edit config/config.exs with your Discord token:
-
-    ```elixir
-    import Config
-    
-    config :nostrum,
-      token: "YOUR_DISCORD_BOT_TOKEN",
-      gateway_intents: :all
-    ``` 
-  
-3. **Run with Docker:**
-
-    ```bash
-    docker-compose up --build
-    ```
-4. **Invite the bot to your server:**
-    - In Discord Developer Portal, go to OAuth2 → URL Generator
-    - Select bot scope
-    - Check "Administrator" permission
-    - Use the generated URL to invite the bot
-
-## 📜 Available Commands
+## Available Commands
 
 | Command               | Description                          | Example Usage                  | API Used                  |
 |-----------------------|--------------------------------------|--------------------------------|---------------------------|
